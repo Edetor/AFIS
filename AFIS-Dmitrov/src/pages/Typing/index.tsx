@@ -1,6 +1,8 @@
 import { Box, Grid, Grid2, Typography } from "@mui/material";
 import { paragraphs } from "../../api/pargraphs";
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import CachedIcon from '@mui/icons-material/Cached';
+import styles from './style.module.scss'
 
 const dataset = paragraphs;
 const randomIndex = Math.floor(Math.random() * dataset.length)
@@ -21,8 +23,18 @@ const Typing = () => {
 	const [cpm, setCpm] = useState(0);
 	const [acc, setAcc] = useState(0);
 
+	const handleInput = (e: any) => {
+		const { value } = e.target;
 
+		setWord(value);
+		setCharIndex(value.length)
+	}
 
+	const callbackRef = useCallback(inputEl => {
+		if(inputEl){
+			document.addEventListener("keydown", () => inputEl.focus())
+		}
+	}, [])
 
 	return (
 		<Box
@@ -130,8 +142,42 @@ const Typing = () => {
 
 			</Grid2>
 
+			<input type="text" value={word}  autoFocus 
+			onChange={handleInput}
+			ref={callbackRef}
+			/>
 
+			<Box margin={'20px'}>
+				{
+					data.split('').map((char: string, index: number) => (
+						<Box 
+							component={'span'}  
+							key={index} 
+							fontSize={'25px'}
+							className={`
+								${styles.text}
 
+								${index === charIndex ? `${styles.active}` : ''}
+								${word[index] === char 
+									? `${styles.correct}` 
+									: index < charIndex ? `${styles.incorrect}` : ''
+								}
+							`}
+						>
+							{char}
+						</Box>
+					))
+				}
+			</Box>		
+
+			<Box component={'span'}>
+				<CachedIcon
+					fontSize="large" 
+					sx={{
+						cursor: 'pointer',
+					}}
+				/>
+			</Box>
 		</Box>
 	)
 }

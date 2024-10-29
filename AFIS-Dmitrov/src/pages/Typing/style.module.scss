@@ -1,0 +1,26 @@
+.text {
+	padding: 0 2px;
+}
+
+.text.active {
+	color: #3295db;
+	border-radius: 0;
+	border-bottom: 3px solid #3295db;
+	animation: cursorTyping 2s 1s infinite;
+}
+
+@keyframes cursorTyping {
+	0% {border-color:#3295db }
+	50% {border-color: transparent}
+	100% {border-color:#3295db}
+}
+
+.text.correct {
+	color: #95c590;
+	background-color: #edf7e7;
+}
+
+.text.incorrect {
+	color: #d55b60;
+	background-color: #ffdcd9;
+}
