@@ -1,5 +1,6 @@
 import { Box } from "@mui/material"
 import styles from './style.module.scss'
+import React from "react";
 
 interface TypingContentProps {
 	data: string;
@@ -7,7 +8,7 @@ interface TypingContentProps {
 	charIndex: number;
 }
 
-const TypingContent: React.FC<TypingContentProps> = ({ data, word, charIndex }) => {
+const TypingContent: React.FC<TypingContentProps> =({ data, word, charIndex }) => {
 	return (
 		<Box
 			sx={{
