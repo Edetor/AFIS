@@ -71,8 +71,8 @@ const Navbar = () => {
 
 								sx={{
 									color: 'var(--text-color)',
-									verticalAlign: 'middle',
-									gap: '5px',
+									verticalAlign: 'middle',							
+									marginBottom: '5px',
 									'&:hover': {
 										backgroundColor: 'var(--hover-navbar)',
 										color: 'var(--hover-text)',

@@ -27,17 +27,25 @@
   --button-background: #fff;
   --hover-navbar: #272727;
   --hover-text: #fff;
+  --typing-content-correct: #95c590;
+  --bg-image: url(../public/img/words-for-typing.png);
+  --goals-background: #ABF71C;
+  --goals-text-color: #123A97;
 }
 
 [data-theme="dark"] {
-  --background-color: hsl(0, 0%, 12%);
+  --background-color: hsl(0, 0%, 12%, 0.9);
   --text-color: #ffffff;
-  --content-background: hsl(0, 0%, 12%);
+  --content-background: hsl(0, 0%, 12%,  0.9);
   --navbar-background: #272727;
   --footer-background: #333333;
   --button-background: #333333;
   --hover-navbar: #fff;
   --hover-text: #272727;
+  --typing-content-correct: rgb(6, 121, 6);
+  --bg-image: url(../public/img/words-for-typing.png);
+  --goals-background: #1A0B32;
+  --goals-text-color: #D7A6C8;
 
 }
 
